@@ -33,11 +33,21 @@ int main(int argc,char*argv[])
     {
         int len=strlen(names[k]);
         if(len>max_len)
-        max_len=len;
+        {
+            max_len=len;
+        }
     }
+    int cols=5;
+    int count=0;
     for (int k = 0; k < i; k++)
     {
         printf("%-*s",max_len+2, names[k]);
+        count++;
+        if(count==cols)
+        {
+            printf("\n");
+            count=0;
+        }
     }
     printf("\n");
     return 0;
